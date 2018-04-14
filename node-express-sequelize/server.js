@@ -9,7 +9,13 @@ var User = sequelize.define('User', {
 
 /*  Create a '/users' route that responds to 
     a GET request with all users in the database */
+user.get('/users',function(req,res){
+	User.findAll().then(users => {
+  console.log(users)
 
+
+	res.send(users)
+})
 
 
 module.exports = { 
